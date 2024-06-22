@@ -1,0 +1,30 @@
+:root {
+    --grid-col: 1;
+    --grid-row: 1;
+}
+
+#all {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+}
+
+#container {
+    display: grid;
+    grid-template-columns: repeat(var(--grid-col), 1fr);
+    grid-template-rows: repeat(var(--grid-row), 1fr);
+    width: 50%;
+    height: 50%;
+}
+
+.grid-item {
+    width: 100%;
+    height: auto;
+}
+
+#container, .grid-item {
+    border: 1px solid black;
+}
