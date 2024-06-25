@@ -10,19 +10,23 @@
     overflow: hidden;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 
 #container {
     display: grid;
-    grid-template-columns: repeat(var(--grid-col), 1fr);
-    grid-template-rows: repeat(var(--grid-row), 1fr);
-    width: 50%;
-    height: 50%;
+    width: 500px;
+    height: 500px;
+    margin: 10px;
+    background-color: black;
+}
+
+h1 {
+    margin: 0;
 }
 
 .grid-item {
-    width: 100%;
-    height: auto;
+    background-color: white;
 }
 
 #container, .grid-item {
