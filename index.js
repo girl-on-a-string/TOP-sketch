@@ -1,7 +1,7 @@
 //variables
 
 const count = 0;
-const gridItem = document.querySelectorAll(".grid-item");
+let gridItem = document.querySelectorAll(".grid-item");
 const container = document.getElementById("container");
 const size = document.getElementById("size");
 
@@ -11,20 +11,39 @@ function createGrid (measurements) {
     for (let i = 0; i < (measurements * measurements); i++) {
         container.style.gridTemplateColumns = `repeat(${measurements}, 1fr)`;
         container.style.gridTemplateRows = `repeat(${measurements}, 1fr)`;
+
         let cell = document.createElement("div");
+
         cell.style.width = `calc(100 / ${measurements})`;
         cell.style.height = `calc(100 / ${measurements})`;
-        container.appendChild(cell).className = "grid-item";
+
+        //container.appendChild(cell).className = "grid-item";
+        let r = Math.floor(Math.random() * 256);
+        let g = Math.floor(Math.random() * 256);
+        let b = Math.floor(Math.random() *256);
+
+        container.appendChild(cell).className = "color";
+        cell.addEventListener("mouseover", () => {
+            cell.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+        });
+
     };
+
+
 }
 
-createGrid(16);
+//delete grid
+
+function deleteGrid () {
+    
+}
 
 //adjust size
 
 function adjustSize () {
     adjustment = Number(prompt("Set size between 2-100"));
     if (adjustment >= 2 && adjustment <= 100) {
+        createGrid(0);
         createGrid(adjustment);
         return true;
     } else {
@@ -33,21 +52,20 @@ function adjustSize () {
     }
 }
 
-// hover effect
+//reset size
 
-function hover () {
-    gridItem.forEach((gridItem) => {
-        container.addEventListener('mouseover', () => {
-            gridItem.style.backgroundColor = 'black';
-        });
+function resetAll () {
+    // container.querySelectorAll(".grid-item", () => {
+    //     gridItem.style.backgroundColor = "white";
+    // });
+
+    createGrid(16);
+    gridItem.forEach((gridItem), () => {
+        gridItem.style.backgroundColor = "white";
     });
-
-    return;
 }
 
-hover();
+// all functions in order
 
-//set colors
-
-
+createGrid(16);
 

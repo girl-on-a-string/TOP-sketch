@@ -1,8 +1,3 @@
-:root {
-    --grid-col: 1;
-    --grid-row: 1;
-}
-
 #all {
     width: 100vw;
     height: 100vh;
@@ -27,6 +22,10 @@ h1 {
 
 .grid-item {
     background-color: white;
+}
+
+.grid-item.color {
+    background-color: black;
 }
 
 #container, .grid-item {
