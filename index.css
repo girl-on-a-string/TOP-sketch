@@ -20,14 +20,10 @@ h1 {
     margin: 0;
 }
 
-.grid-item {
+.color {
     background-color: white;
 }
 
-.grid-item.color {
-    background-color: black;
-}
-
-#container, .grid-item {
-    border: 1px solid black;
+#container {
+    border: 3px solid black;
 }

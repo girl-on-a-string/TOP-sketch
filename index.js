@@ -5,7 +5,7 @@ let gridItem = document.querySelectorAll(".grid-item");
 const container = document.getElementById("container");
 const size = document.getElementById("size");
 
-//create grid
+// //create grid
 
 function createGrid (measurements) {
     for (let i = 0; i < (measurements * measurements); i++) {
@@ -17,7 +17,7 @@ function createGrid (measurements) {
         cell.style.width = `calc(100 / ${measurements})`;
         cell.style.height = `calc(100 / ${measurements})`;
 
-        //container.appendChild(cell).className = "grid-item";
+        //change the colors 
         let r = Math.floor(Math.random() * 256);
         let g = Math.floor(Math.random() * 256);
         let b = Math.floor(Math.random() *256);
@@ -25,20 +25,16 @@ function createGrid (measurements) {
         container.appendChild(cell).className = "color";
         cell.addEventListener("mouseover", () => {
             cell.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+            for (i = 0; i < 10; i--) {
+                
+            }
         });
-
     };
-
-
 }
 
-//delete grid
+createGrid(16);
 
-function deleteGrid () {
-    
-}
-
-//adjust size
+// //adjust size
 
 function adjustSize () {
     adjustment = Number(prompt("Set size between 2-100"));
@@ -52,20 +48,13 @@ function adjustSize () {
     }
 }
 
-//reset size
+// //reset size
 
 function resetAll () {
-    // container.querySelectorAll(".grid-item", () => {
-    //     gridItem.style.backgroundColor = "white";
-    // });
 
     createGrid(16);
     gridItem.forEach((gridItem), () => {
         gridItem.style.backgroundColor = "white";
     });
 }
-
-// all functions in order
-
-createGrid(16);
 
